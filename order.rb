@@ -1,35 +1,35 @@
 class Product
-	attr_accessor :name, :price
+  attr_accessor :name, :price
 
-	def initialize(attrs={})
+  def initialize(attrs={})
     attrs.each { |attr, value| send("#{attr}=", value) }
-	end
+  end
 
-	def self.add(attrs={})
-		@products ||= []
-		@products << Product.new(attrs)
-	end
+  def self.add(attrs={})
+    @products ||= []
+    @products << Product.new(attrs)
+  end
 
-	def self.get(name)
+  def self.get(name)
     if @products.empty?
       nil
     end
-		@products.find{|e| e.name == name}
-	end
+    @products.find{|e| e.name == name}
+  end
 end
 
 
 class LineItem
-	attr_accessor :quantity, :product
+  attr_accessor :quantity, :product
 
-	def initialize(quantity, product)
-		@quantity = quantity
-		@product = product
-	end
+  def initialize(quantity, product)
+    @quantity = quantity
+    @product = product
+  end
 
-	def line_item_price
-		@quantity * @product.price
-	end
+  def line_item_price
+    @quantity * @product.price
+  end
 end
 
 
