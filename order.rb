@@ -44,7 +44,7 @@ class Order
     if product == nil
       raise "No Such Product"
     end
-		@line_items << LineItem.new(quantity, product)
+    @line_items << LineItem.new(quantity, product)
 	end
 
 	def total_price
