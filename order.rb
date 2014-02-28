@@ -34,22 +34,22 @@ end
 
 
 class Order
-	def initialize(tax_rate: 0.05)
-		@tax_rate = tax_rate
-		@line_items = []
-	end
+  def initialize(tax_rate: 0.05)
+    @tax_rate = tax_rate
+    @line_items = []
+  end
 
-	def add(quantity, product_name)
+  def add(quantity, product_name)
     product = Product.get(product_name)
     if product == nil
       raise "No Such Product"
     end
     @line_items << LineItem.new(quantity, product)
-	end
+  end
 
-	def total_price
-		subtotal = @line_items.reduce(0){|sum, e| sum + e.line_item_price }
-		subtotal *= (1+@tax_rate)
-		subtotal.round(2)
-	end
+  def total_price
+    subtotal = @line_items.reduce(0){|sum, e| sum + e.line_item_price }
+    subtotal *= (1+@tax_rate)
+    subtotal.round(2)
+  end
 end
