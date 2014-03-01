@@ -17,28 +17,28 @@ class OrderTest < MiniTest::Unit::TestCase
   end
 end
 
-class PrivateTest < MiniTest::Unit::TestCase
-  def test_add_product_length
+#class PrivateTest < MiniTest::Unit::TestCase
+#  def test_add_product_length
     #Product.add(name: "Muffin", price: 2.99)
     #Product.add(name: "Coffee", price: 3.75)
     #assert_equal Product.products.size, 2
-    end
+#    end
 
-  def test_find_product
+#  def test_find_product
     #Product.add(name: "Muffin", price: 2.99)
     #Product.add(name: "Coffee", price: 3.75)
 
     #assert_equal Product.get("Muffin").name, "Muffin"
     #assert_equal Product.get("Coffee").name, "Coffee"
-    end
+#    end
 
-    def test_find_bad_product
-      assert_equal Product.get("Bad"), nil
-    end
+#    def test_find_bad_product
+#      assert_equal Product.get("Bad"), nil
+#    end
 
-    def test_add_bad_product_to_order
-      order = Order.new(tax_rate: 0.05)
-      assert_raises(RuntimeError){order.add 2, "BadName"}
-    end
+#    def test_add_bad_product_to_order
+#      order = Order.new(tax_rate: 0.05)
+#      assert_raises(RuntimeError){order.add 2, "BadName"}
+#    end
 
-end
+#end
